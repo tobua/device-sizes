@@ -1,0 +1,33 @@
+{
+  "name": "device-sizes",
+  "description": "Collection of properties of popular mobile devices.",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "author": "Matthias Giger",
+  "repository": "github:tobua/device-sizes",
+  "type": "module",
+  "sideEffects": false,
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc index.ts --declaration"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "keywords": [
+    "mobile",
+    "device",
+    "size",
+    "resolution",
+    "scale",
+    "responsive"
+  ]
+}
