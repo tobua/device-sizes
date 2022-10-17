@@ -7,17 +7,16 @@
   "repository": "github:tobua/device-sizes",
   "type": "module",
   "sideEffects": false,
-  "main": "index.js",
+  "main": "dist/index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./dist/index.js"
   },
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc index.ts --declaration"
+    "build": "tsc index.ts --outDir dist --declaration --target esnext --module esnext"
   },
   "files": [
-    "index.js",
-    "index.d.ts"
+    "dist"
   ],
   "devDependencies": {
     "typescript": "^4.8.4"
