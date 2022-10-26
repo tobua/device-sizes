@@ -15,6 +15,11 @@
   "scripts": {
     "build": "tsc index.ts --outDir dist --declaration --target esnext --module esnext"
   },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "files": [
     "dist"
   ],
