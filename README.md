@@ -69,3 +69,31 @@ The types can be imported from the plugin when needed.
 ```ts
 import { Device, Brand, Camera, Type } from 'device-sizes'
 ```
+
+## GraphQL API
+
+To avoid bundling all devices or download unnecessary properties the data can be queried through GraphQL. The API is reachable at `https://device-sizes.vercel.app/api/graphql`.
+
+```ts
+import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client'
+
+const client = new ApolloClient({
+  uri: 'https://device-sizes.vercel.app/api/graphql'
+  cache: new InMemoryCache(),
+})
+
+const response = await client.query({
+  query: gql`
+    query GetDevices {
+      devices {
+        id
+        name
+        width
+        height
+      }
+    }
+  `,
+})
+
+const { devices } = response.data
+```
