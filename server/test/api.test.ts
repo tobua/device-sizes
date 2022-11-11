@@ -11,6 +11,11 @@ const client = new ApolloClient({
   link: new HttpLink({ uri: 'http://localhost:3000/api', fetch }),
 })
 
+const clientLive = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({ uri: 'https://device-sizes.vercel.app/api', fetch }),
+})
+
 test('Returns devices with fields specified.', async () => {
   const response = await client.query({
     query: gql`
@@ -63,4 +68,25 @@ test('Returns additional fields.', async () => {
   expect(Brand[devices[0].brand]).toBeDefined()
   expect(typeof Brand[devices[0].brand]).toBe('string')
   expect(Camera[devices[0].camera]).toBeDefined()
+})
+
+test('Public API is reachable.', async () => {
+  const response = await clientLive.query({
+    query: gql`
+      query GetDevices {
+        devices {
+          id
+          name
+        }
+      }
+    `,
+  })
+
+  expect(response.loading).toBe(false)
+
+  const { devices } = response.data
+
+  expect(devices.length).toBeGreaterThan(10)
+  expect(Object.keys(devices[0])).toContain('id')
+  expect(Object.keys(devices[0])).toContain('name')
 })
