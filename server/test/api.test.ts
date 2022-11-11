@@ -2,13 +2,13 @@ import { expect, test } from 'vitest'
 import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client'
 import fetch from 'cross-fetch'
 import server from '../api/index.js'
-import { deviceSizes, Brand, Camera } from '../../index.js'
+import { deviceSizes, Brand, Camera } from '../../dist/index.js'
 
 server.listen(3000)
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: new HttpLink({ uri: 'http://localhost:3000/graphql', fetch }),
+  link: new HttpLink({ uri: 'http://localhost:3000/api', fetch }),
 })
 
 test('Returns devices with fields specified.', async () => {

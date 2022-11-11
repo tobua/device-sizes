@@ -72,13 +72,13 @@ import { Device, Brand, Camera, Type } from 'device-sizes'
 
 ## GraphQL API
 
-To avoid bundling all devices or download unnecessary properties the data can be queried through GraphQL. The API is reachable at `https://device-sizes.vercel.app/api/graphql`.
+To avoid bundling all devices or download unnecessary properties the data can be queried through GraphQL. The API is reachable at `https://device-sizes.vercel.app/api`.
 
 ```ts
 import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client'
 
 const client = new ApolloClient({
-  uri: 'https://device-sizes.vercel.app/api/graphql'
+  uri: 'https://device-sizes.vercel.app/api'
   cache: new InMemoryCache(),
 })
 
