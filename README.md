@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/tobua/device-sizes/raw/main/logo.png" alt="Device Sizes" width="250">
+</p>
+
 # Device Sizes
 
 Collection of various properties relevant for development of various popular mobile devices.
