@@ -5,6 +5,7 @@ export enum Brand {
   Xiaomi,
   Oppo,
   Huawei,
+  Vivo,
 }
 
 export enum Camera {
@@ -952,6 +953,19 @@ export const deviceSizes: Record<string, Device> = {
     scale: 2, // ?
     brand: Brand.Huawei,
     camera: Camera.Outside,
+    type: Type.Phone,
+  },
+  // Vivo
+  x90proplus: {
+    id: 'x90proplus',
+    name: 'vivo X90 Pro+',
+    width: 1440,
+    height: 3200,
+    size: 6.78,
+    density: 517,
+    scale: 4, // ?
+    brand: Brand.Vivo,
+    camera: Camera.Center,
     type: Type.Phone,
   },
 }
