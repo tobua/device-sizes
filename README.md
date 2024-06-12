@@ -15,7 +15,7 @@ npm install device-sizes
 ```ts
 import { deviceSizes } from 'device-sizes'
 
-console.log(deviceSizes.iphone14.name === 'iPhone 14') // true
+console.log(deviceSizes.iphone15.name === 'iPhone 15') // true
 
 const widths = Object.keys(deviceSizes).map((key) => deviceSizes[key].width)
 const sumOfWidths = widths.reduce((previous, current) => previous + current, 0)

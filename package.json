@@ -2,32 +2,30 @@
   "name": "device-sizes",
   "description": "Collection of properties of popular mobile devices.",
   "version": "0.0.0-development",
+  "repository": "github:tobua/device-sizes",
   "license": "MIT",
   "author": "Matthias Giger",
-  "repository": "github:tobua/device-sizes",
+  "scripts": {
+    "build": "tsc index.ts --outDir dist --declaration --target esnext --module esnext",
+    "start": "vercel dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vercel": "^34.2.7"
+  },
   "type": "module",
   "sideEffects": false,
   "main": "dist/index.js",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "vercel dev",
-    "build": "tsc index.ts --outDir dist --declaration --target esnext --module esnext"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 100
-  },
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "devDependencies": {
-    "typescript": "^4.9.3",
-    "vercel": "^28.5.6"
-  },
   "keywords": [
     "mobile",
     "device",
@@ -35,5 +33,13 @@
     "resolution",
     "scale",
     "responsive"
-  ]
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true
+  },
+  "publishConfig": {
+    "provenance": true
+  }
 }

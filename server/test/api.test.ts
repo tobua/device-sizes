@@ -2,7 +2,7 @@ import { expect, test } from 'vitest'
 import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client'
 import fetch from 'cross-fetch'
 import server from '../api/index.js'
-import { deviceSizes, Brand, Camera } from '../../dist/index.js'
+import { Brand, Camera } from '../../dist/index.js'
 
 server.listen(3000)
 
